@@ -344,6 +344,7 @@
                 <span class="logo-text">CreditClear <span class="diy">DIY</span></span>
             </div>
             <div class="nav-links">
+                <a href="#" onclick="showSection('dispute-finder')">🔍 Find Disputes</a>
                 <a href="#" class="nav-active" onclick="showSection('letters-dashboard')">Letters</a>
                 <a href="#" onclick="showSection('tracker')">Tracker</a>
                 <a href="#" onclick="showSection('guide')">Guide</a>
@@ -352,6 +353,170 @@
         </nav>
 
         <main class="dashboard-main">
+            <!-- Dispute Finder Section -->
+            <div id="dispute-finder" class="dashboard-section" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>🔍 Dispute Finder</h1>
+                    <p>Answer a few questions to find out what you can dispute and which letters to use</p>
+                </div>
+
+                <div class="finder-container">
+                    <!-- Step 1: Get Credit Report -->
+                    <div class="finder-step" id="finder-step-1">
+                        <div class="step-header">
+                            <span class="step-badge">Step 1</span>
+                            <h2>Get Your Free Credit Reports</h2>
+                        </div>
+                        <div class="step-content">
+                            <p>Before you can dispute anything, you need to see what's on your credit reports. You're entitled to <strong>FREE reports from all 3 bureaus</strong> once per year.</p>
+                            
+                            <a href="https://www.annualcreditreport.com" target="_blank" class="btn btn-primary btn-large" style="margin: 20px 0;">
+                                📄 Get Your Free Credit Reports →
+                            </a>
+                            
+                            <div class="info-box">
+                                <h4>⚠️ Important Tips:</h4>
+                                <ul>
+                                    <li>Get reports from ALL 3 bureaus: Equifax, Experian, and TransUnion</li>
+                                    <li>Print or save them so you can review carefully</li>
+                                    <li>The same negative item might appear on 1, 2, or all 3 reports</li>
+                                    <li>You'll need to dispute with EACH bureau that shows the error</li>
+                                </ul>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="showFinderStep(2)" style="margin-top: 20px;">
+                                I Have My Reports - Continue →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Questionnaire -->
+                    <div class="finder-step" id="finder-step-2" style="display: none;">
+                        <div class="step-header">
+                            <span class="step-badge">Step 2</span>
+                            <h2>What's On Your Credit Report?</h2>
+                        </div>
+                        <div class="step-content">
+                            <p>Check all that appear on your credit report:</p>
+
+                            <div class="checklist-form">
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-collections" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Collections</strong>
+                                        <small>Accounts sent to collection agencies (medical bills, old debts, etc.)</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-late-payments" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Late Payments</strong>
+                                        <small>30, 60, 90+ day late marks on credit cards, loans, etc.</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-charge-offs" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Charge-Offs</strong>
+                                        <small>Accounts written off as a loss by the creditor</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-inquiries" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Hard Inquiries</strong>
+                                        <small>Credit checks you don't remember authorizing</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-wrong-info" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Wrong Information</strong>
+                                        <small>Wrong balances, dates, account numbers, personal info</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-unknown-accounts" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Accounts I Don't Recognize</strong>
+                                        <small>Could be identity theft or mixed files</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-old-debts" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Old Debts (7+ Years)</strong>
+                                        <small>Negative items that should have fallen off by now</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-bankruptcy" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Bankruptcy</strong>
+                                        <small>Chapter 7 or Chapter 13 bankruptcy on record</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-medical" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Medical Debt</strong>
+                                        <small>Unpaid medical bills or medical collections</small>
+                                    </div>
+                                </label>
+
+                                <label class="checklist-item">
+                                    <input type="checkbox" id="has-student-loans" onchange="updateRecommendations()">
+                                    <span class="checkmark"></span>
+                                    <div class="checklist-text">
+                                        <strong>Student Loan Issues</strong>
+                                        <small>Incorrect student loan info, wrong status, etc.</small>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <button class="btn btn-primary btn-large" onclick="showFinderStep(3)" style="margin-top: 30px;">
+                                Get My Recommendations →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Recommendations -->
+                    <div class="finder-step" id="finder-step-3" style="display: none;">
+                        <div class="step-header">
+                            <span class="step-badge">Step 3</span>
+                            <h2>Your Dispute Action Plan</h2>
+                        </div>
+                        <div class="step-content">
+                            <div id="recommendations-list" class="recommendations-list">
+                                <!-- Populated by JavaScript -->
+                            </div>
+
+                            <div class="action-plan-footer">
+                                <button class="btn btn-outline" onclick="showFinderStep(2)">← Back to Checklist</button>
+                                <button class="btn btn-primary" onclick="showSection('letters-dashboard')">Go to Letter Generator →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Letters Dashboard Section -->
             <div id="letters-dashboard" class="dashboard-section">
                 <div class="dashboard-header">
