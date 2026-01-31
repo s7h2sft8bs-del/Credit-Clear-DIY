@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditClear DIY - Fix Your Credit Without Expensive Monthly Fees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <span class="logo-text">CreditClear <span class="diy">DIY</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#letters">Letters Included</a>
+                <a href="#pricing">Pricing</a>
+                <button class="btn btn-outline" onclick="showLogin()">Login</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="hero-content">
+                <div class="badge">ONE-TIME PURCHASE • LIFETIME ACCESS</div>
+                <h1>Stop Paying $100+/Month<br>for <span>Credit Repair</span></h1>
+                <p class="hero-subtitle">Get the same legal dispute letters that credit repair companies use. Print them, mail them yourself, and keep all the savings. <strong>Your success depends on YOU taking action.</strong></p>
+                
+                <div class="price-comparison">
+                    <div class="comparison-item old">
+                        <span class="label">Credit Repair Companies</span>
+                        <span class="price">$79-150<span>/month</span></span>
+                        <span class="total">= $948-1,800/year</span>
+                    </div>
+                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-item new">
+                        <span class="label">CreditClear DIY</span>
+                        <span class="price">$29.99<span> once</span></span>
+                        <span class="total">Lifetime access</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-large" onclick="checkout()">
+                    Get Instant Access - $29.99
+                </button>
+                <p class="guarantee"><span>30-day money back guarantee</span> <span>Instant access after purchase</span></p>
+            </div>
+            <div class="hero-image">
+                <div class="credit-score-card">
+                    <div class="score-label">Your Credit Score</div>
+                    <div class="score-display">
+                        <span class="score-before">580</span>
+                        <span class="score-arrow">→</span>
+                        <span class="score-after">720+</span>
+                    </div>
+                    <div class="score-bar">
+                        <div class="score-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="social-proof">
+            <div class="stat">
+                <span class="stat-number">34%</span>
+                <span class="stat-text">of Americans have errors on their credit reports</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">79%</span>
+                <span class="stat-text">of disputes result in changes when properly filed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">$1,200+</span>
+                <span class="stat-text">average saved vs. credit repair companies</span>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">This is a DIY process - your results depend on YOU mailing the letters and staying consistent</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Letter</h3>
+                    <p>Select from 50+ professionally written dispute letters based on what's hurting your credit</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Fill In Your Details</h3>
+                    <p>Our smart forms auto-fill your information into the letter template</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Print & Mail</h3>
+                    <p><strong>You print the letter and mail it</strong> via USPS Certified Mail (~$5-7 per letter). We show you exactly how.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Stay Consistent</h3>
+                    <p><strong>Check your mail & follow up.</strong> Bureaus respond in 30-45 days. Track everything and send follow-up letters if needed.</p>
+                </div>
+            </div>
+            
+            <div class="important-notice">
+                <div class="notice-icon">📬</div>
+                <div class="notice-content">
+                    <h4>Important: This Requires YOUR Action</h4>
+                    <p>This app gives you the tools, but <strong>YOU must print and mail the letters yourself</strong>. Credit bureaus only accept disputes by mail for best results. Your success depends on staying on top of the mailing process and being consistent. People who mail letters regularly see the best results!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="letters" class="letters-section">
+            <h2>50+ Legal Dispute Letters Included</h2>
+            <p class="section-subtitle">Every letter you need to fight collections, late payments, inquiries, and more</p>
+            
+            <div class="letter-categories">
+                <div class="letter-category">
+                    <div class="category-icon">📋</div>
+                    <h3>Credit Bureau Disputes</h3>
+                    <ul>
+                        <li>General Dispute Letter</li>
+                        <li>609 Verification Letter</li>
+                        <li>611 Method of Verification</li>
+                        <li>Procedural Request Letter</li>
+                        <li>Frivolous Response Rebuttal</li>
+                    </ul>
+                </div>
+                <div class="letter-category">
+                    <div class="category-icon">💳</div>
+                    <h3>Collections & Debt</h3>
+                    <ul>
+                        <li>Debt Validation Letter</li>
+                        <li>Pay-for-Delete Letter</li>
+                        <li>Cease & Desist Letter</li>
+                        <li>Debt Settlement Offer</li>
+                        <li>Statute of Limitations Letter</li>
+                    </ul>
+                </div>
+                <div class="letter-category">
+                    <div class="category-icon">⏰</div>
+                    <h3>Late Payments</h3>
+                    <ul>
+                        <li>Goodwill Adjustment Letter</li>
+                        <li>Late Payment Dispute</li>
+                        <li>Re-aging Request</li>
+                        <li>Hardship Explanation</li>
+                        <li>Payment History Correction</li>
+                    </ul>
+                </div>
+                <div class="letter-category">
+                    <div class="category-icon">🔍</div>
+                    <h3>Inquiries & Identity</h3>
+                    <ul>
+                        <li>Hard Inquiry Removal</li>
+                        <li>Unauthorized Inquiry Dispute</li>
+                        <li>Identity Theft Affidavit</li>
+                        <li>Fraud Alert Request</li>
+                        <li>Security Freeze Letter</li>
+                    </ul>
+                </div>
+                <div class="letter-category">
+                    <div class="category-icon">🏦</div>
+                    <h3>Creditor Letters</h3>
+                    <ul>
+                        <li>623 Direct Dispute</li>
+                        <li>Original Creditor Dispute</li>
+                        <li>Account Verification</li>
+                        <li>Balance Dispute Letter</li>
+                        <li>Account Closure Request</li>
+                    </ul>
+                </div>
+                <div class="letter-category">
+                    <div class="category-icon">📚</div>
+                    <h3>Special Situations</h3>
+                    <ul>
+                        <li>Medical Debt Dispute</li>
+                        <li>Student Loan Letters</li>
+                        <li>Bankruptcy Removal</li>
+                        <li>Judgment Dispute</li>
+                        <li>Tax Lien Letters</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Everything You Need to Fix Your Credit</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>Auto-Fill Letters</h3>
+                    <p>Enter your info once, generate unlimited letters ready to print and mail</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📬</div>
+                    <h3>Mailing Guide</h3>
+                    <p>Step-by-step instructions for mailing via USPS Certified Mail - exactly how the pros do it</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dispute Tracker</h3>
+                    <p>Track every letter you mail, response deadlines, and results in one dashboard</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Step-by-Step Guides</h3>
+                    <p>Know exactly which letter to send for each situation on your credit report</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>FCRA Compliant</h3>
+                    <p>All letters cite proper legal sections and follow credit reporting laws</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Follow-Up Sequences</h3>
+                    <p>Know exactly what to do if your first letter doesn't work</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">♾️</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Pay once, use forever. No monthly fees, no subscriptions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <h2>Simple, One-Time Pricing</h2>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>CreditClear DIY Complete</h3>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="amount">29</span>
+                        <span class="cents">.99</span>
+                    </div>
+                    <p class="pricing-term">One-time payment • Lifetime access</p>
+                </div>
+                <div class="pricing-features">
+                    <div class="pricing-feature">✓ 50+ Professional Dispute Letters</div>
+                    <div class="pricing-feature">✓ Auto-Fill Letter Generator</div>
+                    <div class="pricing-feature">✓ Dispute Tracking Dashboard</div>
+                    <div class="pricing-feature">✓ Step-by-Step Credit Repair Guide</div>
+                    <div class="pricing-feature">✓ Bureau Addresses & Instructions</div>
+                    <div class="pricing-feature">✓ Follow-Up Letter Sequences</div>
+                    <div class="pricing-feature">✓ FCRA & FDCPA Legal References</div>
+                    <div class="pricing-feature">✓ Lifetime Updates</div>
+                </div>
+                <button class="btn btn-primary btn-large" onclick="checkout()">
+                    Get Instant Access Now
+                </button>
+                <p class="pricing-guarantee">30-Day Money Back Guarantee</p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do I have to mail the letters myself?</h3>
+                    <p><strong>Yes.</strong> This is a DIY tool. You generate the letters here, then print and mail them via USPS Certified Mail. This is exactly what credit repair companies do - we just give you the letters so you can do it yourself and save $1,000+.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why can't I just dispute online?</h3>
+                    <p>You can, but mailed letters are more effective. They create a legal paper trail, are harder for bureaus to auto-reject, and carry more weight under the FCRA. Professionals always use mail.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this legal?</h3>
+                    <p>Absolutely. The Fair Credit Reporting Act (FCRA) gives you the legal right to dispute any information on your credit report. These letters help you exercise that right properly.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is this different from credit repair companies?</h3>
+                    <p>Credit repair companies use the exact same letters - they just charge you $100+/month to mail them. We give you the letters so you can mail them yourself and keep the savings.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does it take to see results?</h3>
+                    <p>Credit bureaus must respond within 30-45 days of receiving your letter. Results depend on your situation and how consistently you mail letters and follow up.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does mailing cost?</h3>
+                    <p>About $5-7 per letter for USPS Certified Mail with Return Receipt. Compare that to $100+/month for credit repair services!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Take Control of Your Credit?</h2>
+            <p>Join thousands who've saved money by doing their own credit repair</p>
+            <button class="btn btn-primary btn-large" onclick="checkout()">
+                Get Started for $29.99
+            </button>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">✓</span>
+                    <span class="logo-text">CreditClear <span class="diy">DIY</span></span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p class="disclaimer">CreditClear DIY provides educational materials and letter templates. We are not a law firm and do not provide legal advice. Results vary based on individual circumstances.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLogin()">&times;</span>
+            <h2>Welcome Back</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="modal-footer-text">Don't have an account? <a href="#" onclick="checkout()">Purchase access</a></p>
+        </div>
+    </div>
+
+    <!-- Dashboard (shown after login) -->
+    <div id="dashboard" style="display: none;">
+        <nav class="navbar dashboard-nav">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <span class="logo-text">CreditClear <span class="diy">DIY</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-active" onclick="showSection('letters-dashboard')">Letters</a>
+                <a href="#" onclick="showSection('tracker')">Tracker</a>
+                <a href="#" onclick="showSection('guide')">Guide</a>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <main class="dashboard-main">
+            <!-- Letters Dashboard Section -->
+            <div id="letters-dashboard" class="dashboard-section">
+                <div class="dashboard-header">
+                    <h1>Dispute Letter Generator</h1>
+                    <p>Select a letter category, choose your template, and generate your personalized dispute letter</p>
+                </div>
+                
+                <div class="mailing-reminder">
+                    <span class="reminder-icon">📬</span>
+                    <p><strong>Remember:</strong> After generating your letter, you must <strong>print it and mail it via USPS Certified Mail</strong>. The bureaus respond by mail in 30-45 days. Stay consistent for best results! <a href="#" onclick="showSection('guide'); return false;">See mailing guide →</a></p>
+                </div>
+
+                <div class="letter-selector">
+                    <div class="category-tabs">
+                        <button class="tab active" onclick="selectCategory('bureau')">Credit Bureau</button>
+                        <button class="tab" onclick="selectCategory('collections')">Collections</button>
+                        <button class="tab" onclick="selectCategory('late-payments')">Late Payments</button>
+                        <button class="tab" onclick="selectCategory('inquiries')">Inquiries</button>
+                        <button class="tab" onclick="selectCategory('creditor')">Creditors</button>
+                        <button class="tab" onclick="selectCategory('special')">Special</button>
+                    </div>
+
+                    <div id="letter-templates" class="letter-templates">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div id="letter-generator" class="letter-generator" style="display: none;">
+                    <div class="generator-header">
+                        <button class="btn btn-outline" onclick="backToLetters()">← Back to Letters</button>
+                        <h2 id="selected-letter-title">Letter Title</h2>
+                    </div>
+
+                    <div class="generator-content">
+                        <div class="form-section">
+                            <h3>Your Information</h3>
+                            <form id="letter-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Full Name</label>
+                                        <input type="text" id="user-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" id="user-address" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>City, State, ZIP</label>
+                                        <input type="text" id="user-city-state" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>SSN (Last 4 digits)</label>
+                                        <input type="text" id="user-ssn" maxlength="4" pattern="[0-9]{4}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Date of Birth</label>
+                                        <input type="date" id="user-dob">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="user-phone">
+                                    </div>
+                                </div>
+
+                                <h3>Dispute Details</h3>
+                                <div class="form-group">
+                                    <label>Account Name / Creditor</label>
+                                    <input type="text" id="account-name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Account Number</label>
+                                    <input type="text" id="account-number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Reason for Dispute</label>
+                                    <textarea id="dispute-reason" rows="3" placeholder="Briefly explain why this item is inaccurate..."></textarea>
+                                </div>
+
+                                <button type="button" class="btn btn-primary" onclick="generateLetter()">Generate Letter</button>
+                            </form>
+                        </div>
+
+                        <div class="preview-section">
+                            <h3>Letter Preview</h3>
+                            <div id="letter-preview" class="letter-preview">
+                                <p class="preview-placeholder">Fill in the form to see your letter preview</p>
+                            </div>
+                            <div class="preview-actions">
+                                <button class="btn btn-primary" onclick="downloadLetter()">Download as PDF</button>
+                                <button class="btn btn-outline" onclick="copyLetter()">Copy Text</button>
+                                <button class="btn btn-outline" onclick="addToTracker()">Add to Tracker</button>
+                            </div>
+                            <div class="next-steps-box">
+                                <h4>📋 Next Steps After Generating:</h4>
+                                <ol>
+                                    <li><strong>Print</strong> this letter</li>
+                                    <li><strong>Attach copies</strong> of your ID and proof of address</li>
+                                    <li><strong>Mail via USPS Certified Mail</strong> with Return Receipt (~$5-7)</li>
+                                    <li><strong>Keep your tracking number</strong> and add to tracker above</li>
+                                    <li><strong>Wait 30-45 days</strong> for response by mail</li>
+                                    <li><strong>Follow up</strong> if needed with additional letters</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracker Section -->
+            <div id="tracker" class="dashboard-section" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>Dispute Tracker</h1>
+                    <p>Track all your sent letters and their responses</p>
+                </div>
+
+                <div class="tracker-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-sent">0</span>
+                        <span class="stat-label">Letters Sent</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="awaiting-response">0</span>
+                        <span class="stat-label">Awaiting Response</span>
+                    </div>
+                    <div class="stat-card success">
+                        <span class="stat-number" id="items-removed">0</span>
+                        <span class="stat-label">Items Removed</span>
+                    </div>
+                </div>
+
+                <div class="tracker-table-container">
+                    <table class="tracker-table">
+                        <thead>
+                            <tr>
+                                <th>Letter Type</th>
+                                <th>Sent To</th>
+                                <th>Date Sent</th>
+                                <th>Response Due</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tracker-body">
+                            <tr class="empty-row">
+                                <td colspan="6">No letters tracked yet. Generate a letter and add it to your tracker.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Guide Section -->
+            <div id="guide" class="dashboard-section" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>Credit Repair Guide</h1>
+                    <p>Step-by-step instructions for fixing your credit</p>
+                </div>
+
+                <div class="guide-content">
+                    <div class="guide-step">
+                        <h2>Step 1: Get Your Credit Reports</h2>
+                        <p>You're entitled to free credit reports from all three bureaus once per year at <a href="https://www.annualcreditreport.com" target="_blank">AnnualCreditReport.com</a></p>
+                        <div class="bureau-addresses">
+                            <div class="bureau">
+                                <h4>Equifax</h4>
+                                <p>P.O. Box 740241<br>Atlanta, GA 30374</p>
+                            </div>
+                            <div class="bureau">
+                                <h4>Experian</h4>
+                                <p>P.O. Box 4500<br>Allen, TX 75013</p>
+                            </div>
+                            <div class="bureau">
+                                <h4>TransUnion</h4>
+                                <p>P.O. Box 2000<br>Chester, PA 19016</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <h2>Step 2: Identify Negative Items</h2>
+                        <p>Look for these types of items that may be hurting your score:</p>
+                        <ul>
+                            <li><strong>Collections</strong> - Unpaid debts sold to collection agencies</li>
+                            <li><strong>Late Payments</strong> - Any payment 30+ days past due</li>
+                            <li><strong>Charge-offs</strong> - Accounts written off as uncollectable</li>
+                            <li><strong>Hard Inquiries</strong> - Credit checks from applications</li>
+                            <li><strong>Public Records</strong> - Bankruptcies, judgments, liens</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-step">
+                        <h2>Step 3: Choose Your Dispute Strategy</h2>
+                        <div class="strategy-flowchart">
+                            <div class="flowchart-item">
+                                <h4>Is it a Collection?</h4>
+                                <p>→ Start with Debt Validation Letter to collection agency</p>
+                                <p>→ Then 609 Letter to credit bureaus</p>
+                            </div>
+                            <div class="flowchart-item">
+                                <h4>Is it a Late Payment?</h4>
+                                <p>→ Try Goodwill Letter first (if you paid)</p>
+                                <p>→ Or General Dispute Letter to bureaus</p>
+                            </div>
+                            <div class="flowchart-item">
+                                <h4>Is it an Unauthorized Inquiry?</h4>
+                                <p>→ Hard Inquiry Removal Letter</p>
+                            </div>
+                            <div class="flowchart-item">
+                                <h4>Is the info just wrong?</h4>
+                                <p>→ General Dispute Letter with proof</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <h2>Step 4: How to Mail Your Letters</h2>
+                        <p><strong>Why mail matters:</strong> Physical letters via Certified Mail create a legal paper trail. This is how credit repair companies do it - and now you can too.</p>
+                        
+                        <div class="mailing-guide">
+                            <div class="mailing-section">
+                                <h4>📋 What You Need</h4>
+                                <ul>
+                                    <li>Your printed dispute letter</li>
+                                    <li>Copy of your driver's license or state ID</li>
+                                    <li>Copy of a utility bill OR bank statement (proof of address)</li>
+                                    <li>A standard white envelope</li>
+                                    <li>About $5-7 for Certified Mail fees</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mailing-section">
+                                <h4>📮 At the Post Office</h4>
+                                <ol>
+                                    <li>Put your letter and ID copies in the envelope</li>
+                                    <li>Address it to the credit bureau (addresses above)</li>
+                                    <li>Write your return address in the top left corner</li>
+                                    <li>Tell the clerk: <strong>"I need Certified Mail with Return Receipt"</strong></li>
+                                    <li>Fill out the small green card they give you</li>
+                                    <li>Pay the fee (~$5-7 total)</li>
+                                    <li>Keep your receipt with the tracking number!</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="mailing-section">
+                                <h4>📬 After You Mail</h4>
+                                <ul>
+                                    <li>Track delivery at <a href="https://tools.usps.com/go/TrackConfirmAction" target="_blank">USPS.com/track</a></li>
+                                    <li>The green card will come back signed (proof they received it)</li>
+                                    <li>Keep the green card - this is your legal proof!</li>
+                                    <li>Bureau MUST respond within 30-45 days of receipt</li>
+                                    <li>Response will come to your home address by mail</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tips-box">
+                            <h4>⚠️ Important Tips:</h4>
+                            <ul>
+                                <li><strong>Never send originals</strong> - only copies of your ID and documents</li>
+                                <li><strong>Keep copies of everything</strong> - your letter, receipts, tracking info</li>
+                                <li><strong>One dispute per letter</strong> works best (don't cram multiple disputes)</li>
+                                <li><strong>Send to each bureau separately</strong> - if the item is on all 3 reports, send 3 letters</li>
+                                <li><strong>Don't use online disputes</strong> - letters are more effective and have legal weight</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cost-breakdown">
+                            <h4>💰 Cost Breakdown</h4>
+                            <p>Each letter costs about <strong>$5-7 total</strong> to mail:</p>
+                            <ul>
+                                <li>Certified Mail fee: ~$4.15</li>
+                                <li>Return Receipt: ~$3.35</li>
+                                <li>Compare to credit repair companies: $100+/month!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <h2>Step 5: Follow Up</h2>
+                        <p>Bureaus must respond within 30-45 days. If they don't, or if they verify the item incorrectly:</p>
+                        <ul>
+                            <li>Send a 611 Method of Verification letter</li>
+                            <li>File a complaint with the CFPB at <a href="https://www.consumerfinance.gov/complaint/" target="_blank">consumerfinance.gov</a></li>
+                            <li>Consider sending a 623 letter directly to the creditor</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-step legal-section">
+                        <h2>Your Legal Rights</h2>
+                        <div class="legal-info">
+                            <h4>Fair Credit Reporting Act (FCRA)</h4>
+                            <ul>
+                                <li>Right to dispute inaccurate information</li>
+                                <li>Bureaus must investigate within 30 days</li>
+                                <li>Unverified items must be removed</li>
+                                <li>You can sue for willful violations</li>
+                            </ul>
+                        </div>
+                        <div class="legal-info">
+                            <h4>Fair Debt Collection Practices Act (FDCPA)</h4>
+                            <ul>
+                                <li>Right to request debt validation</li>
+                                <li>Collectors must stop until they validate</li>
+                                <li>Protection from harassment</li>
+                                <li>Can sue collectors who violate the law</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
