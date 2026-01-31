@@ -1787,6 +1787,214 @@ a:hover {
     max-width: 500px;
 }
 
+/* Dispute Finder Styles */
+.finder-container {
+    max-width: 800px;
+}
+
+.finder-step {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.step-header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    padding: 24px 30px;
+    color: white;
+}
+
+.step-badge {
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.step-header h2 {
+    margin: 10px 0 0 0;
+    font-size: 26px;
+}
+
+.step-content {
+    padding: 30px;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+    border: 1px solid #F59E0B;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.info-box h4 {
+    margin: 0 0 12px 0;
+    color: #92400E;
+}
+
+.info-box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #78350F;
+}
+
+.info-box li {
+    margin-bottom: 8px;
+}
+
+.checklist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--bg);
+    border: 2px solid var(--gray-light);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checklist-item:hover {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(6, 182, 212, 0.05));
+}
+
+.checklist-item input[type="checkbox"] {
+    display: none;
+}
+
+.checklist-item .checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gray);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-top: 2px;
+}
+
+.checklist-item input:checked + .checkmark {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-color: var(--primary);
+}
+
+.checklist-item input:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.checklist-item .checklist-text {
+    flex: 1;
+}
+
+.checklist-item .checklist-text strong {
+    display: block;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.checklist-item .checklist-text small {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recommendation-card {
+    background: var(--bg);
+    border: 2px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 24px;
+    border-left: 4px solid var(--primary);
+}
+
+.recommendation-card h3 {
+    margin: 0 0 8px 0;
+    color: var(--dark);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-card p {
+    color: var(--gray);
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.recommendation-card .letters-to-use {
+    background: white;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.recommendation-card .letters-to-use h4 {
+    font-size: 14px;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+}
+
+.recommendation-card .letters-to-use ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.recommendation-card .letters-to-use li {
+    margin-bottom: 6px;
+    color: var(--dark);
+}
+
+.no-issues {
+    text-align: center;
+    padding: 40px;
+}
+
+.no-issues h3 {
+    color: var(--success);
+    margin-bottom: 10px;
+}
+
+.action-plan-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-light);
+}
+
+@media (max-width: 768px) {
+    .action-plan-footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .action-plan-footer .btn {
+        width: 100%;
+    }
+}
+
 .reminder-schedule-preview {
     background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
     padding: 20px;
