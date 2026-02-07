@@ -692,27 +692,17 @@ function showLogin() {
 }
 
 function openLogin() {
-    if (typeof Outseta !== 'undefined' && Outseta.auth) {
-        Outseta.auth.open({widgetMode: 'login'});
-    } else {
-        alert('Loading... please try again in a moment.');
-    }
+    var callback = encodeURIComponent(window.location.origin);
+    window.location.href = 'https://project-hope.outseta.com/auth?widgetMode=login&planUid=B9I4XI98&skipPlanOptions=true&authenticationCallbackUrl=' + callback + '#o-anonymous';
 }
 
 function openSignup() {
-    if (typeof Outseta !== 'undefined' && Outseta.auth) {
-        Outseta.auth.open({widgetMode: 'register'});
-    } else {
-        alert('Loading... please try again in a moment.');
-    }
+    var callback = encodeURIComponent(window.location.origin);
+    window.location.href = 'https://project-hope.outseta.com/auth?widgetMode=register&planUid=B9I4XI98&skipPlanOptions=true&authenticationCallbackUrl=' + callback + '#o-anonymous';
 }
 
 function openProfile() {
-    if (typeof Outseta !== 'undefined' && Outseta.profile) {
-        Outseta.profile.open();
-    } else {
-        alert('Loading... please try again in a moment.');
-    }
+    window.location.href = 'https://project-hope.outseta.com/profile#o-authenticated';
 }
 
 function closeLogin() {}
