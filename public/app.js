@@ -688,8 +688,30 @@ function logoutOutseta() {
 
 // Navigation functions - kept for compatibility
 function showLogin() {
-    if (typeof Outseta !== 'undefined') {
+    openLogin();
+}
+
+function openLogin() {
+    if (typeof Outseta !== 'undefined' && Outseta.auth) {
         Outseta.auth.open({widgetMode: 'login'});
+    } else {
+        alert('Loading... please try again in a moment.');
+    }
+}
+
+function openSignup() {
+    if (typeof Outseta !== 'undefined' && Outseta.auth) {
+        Outseta.auth.open({widgetMode: 'register'});
+    } else {
+        alert('Loading... please try again in a moment.');
+    }
+}
+
+function openProfile() {
+    if (typeof Outseta !== 'undefined' && Outseta.profile) {
+        Outseta.profile.open();
+    } else {
+        alert('Loading... please try again in a moment.');
     }
 }
 
