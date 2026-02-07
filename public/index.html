@@ -26,6 +26,22 @@
         };
     </script>
     <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
+    <style>
+        /* Prevent our styles from breaking Outseta popups */
+        [data-outseta-module] *,
+        .outseta-modal *,
+        #outseta-modal-container *,
+        [class*="outseta"] * {
+            all: revert;
+        }
+        iframe[src*="outseta"] {
+            display: block !important;
+            width: 100% !important;
+            min-height: 500px !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Landing Page -->
