@@ -610,69 +610,101 @@ let selectedLetter = null;
 let trackedDisputes = [];
 let userData = {};
 
+// Stripe Payment Link
+const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/8x2eVcfS66828Ht11X7Zu00';
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Load from localStorage
     trackedDisputes = JSON.parse(localStorage.getItem('disputes') || '[]');
     userData = JSON.parse(localStorage.getItem('userData') || '{}');
     
-    // Wait for Outseta to load, then check auth
-    checkOutsetaAuth();
+    // Check if returning from Stripe payment
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('paid') === 'true') {
+        showSetupAccount();
+        window.history.replaceState({}, document.title, window.location.pathname);
+        return;
+    }
+    
+    // Check if user is logged in
+    if (localStorage.getItem('cc_access') === 'true') {
+        showDashboard();
+    } else {
+        showLanding();
+    }
 });
 
-// Outseta Auth Check
-function checkOutsetaAuth() {
-    // Poll until Outseta is ready
-    const checkInterval = setInterval(function() {
-        if (typeof Outseta !== 'undefined' && Outseta.getUser) {
-            clearInterval(checkInterval);
-            
-            const user = Outseta.getUser();
-            console.log('=== OUTSETA DEBUG ===');
-            console.log('User:', JSON.stringify(user, null, 2));
-            
-            if (user && user.Email) {
-                const account = user.Account;
-                let hasAccess = false;
-                
-                console.log('Account:', JSON.stringify(account, null, 2));
-                console.log('CurrentSubscription:', account ? JSON.stringify(account.CurrentSubscription, null, 2) : 'none');
-                console.log('Subscriptions:', account ? JSON.stringify(account.Subscriptions, null, 2) : 'none');
-                
-                if (account && account.CurrentSubscription) {
-                    const sub = account.CurrentSubscription;
-                    console.log('Plan UID:', sub.Plan ? sub.Plan.Uid : 'no plan');
-                    console.log('Sub Status:', sub.SubscriptionStatus);
-                    // Must match CreditClear plan AND have paid
-                    if (sub.Plan && sub.Plan.Uid === 'B9I4XI98' && sub.SubscriptionStatus !== 0) {
-                        hasAccess = true;
-                    }
-                }
-                
-                console.log('hasAccess:', hasAccess);
-                
-                if (hasAccess) {
-                    showDashboard();
-                } else {
-                    showLanding();
-                }
-            } else {
-                showLanding();
-            }
-            
-            Outseta.on('subscription.update', function() { location.reload(); });
-            Outseta.on('auth.login', function() { location.reload(); });
-            Outseta.on('auth.logout', function() { showLanding(); });
-        }
-    }, 200);
+// Stripe checkout
+function goToCheckout() {
+    window.location.href = STRIPE_PAYMENT_LINK;
+}
+
+// Show setup account after payment
+function showSetupAccount() {
+    document.getElementById('landing-page').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'none';
     
-    setTimeout(function() {
-        clearInterval(checkInterval);
-        if (document.getElementById('landing-page').style.display !== 'none' && 
-            document.getElementById('dashboard').style.display !== 'block') {
-            showLanding();
-        }
-    }, 5000);
+    var modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.style.display = 'flex';
+    modal.id = 'setup-modal';
+    modal.innerHTML = '<div class="modal-content">' +
+        '<h2>✅ Payment Successful!</h2>' +
+        '<p style="color: #64748B; margin-bottom: 20px;">Create your login to access CreditClear DIY anytime.</p>' +
+        '<form onsubmit="completeSetup(event)">' +
+        '<div class="form-group"><label for="setup-email">Email</label>' +
+        '<input type="email" id="setup-email" required placeholder="Your email"></div>' +
+        '<div class="form-group"><label for="setup-password">Create Password</label>' +
+        '<input type="password" id="setup-password" required placeholder="Choose a password" minlength="6"></div>' +
+        '<button type="submit" class="btn btn-primary" style="width:100%">Access My Dashboard</button>' +
+        '</form></div>';
+    document.body.appendChild(modal);
+}
+
+function completeSetup(event) {
+    event.preventDefault();
+    var email = document.getElementById('setup-email').value;
+    var password = document.getElementById('setup-password').value;
+    
+    localStorage.setItem('cc_access', 'true');
+    localStorage.setItem('cc_email', email);
+    localStorage.setItem('cc_password', btoa(password));
+    
+    var modal = document.getElementById('setup-modal');
+    if (modal) modal.remove();
+    showDashboard();
+}
+
+// Login/Logout
+function showLoginModal() {
+    document.getElementById('login-modal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+}
+
+function handleLogin(event) {
+    event.preventDefault();
+    var email = document.getElementById('login-email').value;
+    var password = document.getElementById('login-password').value;
+    
+    var storedEmail = localStorage.getItem('cc_email');
+    var storedPassword = atob(localStorage.getItem('cc_password') || '');
+    
+    if (email === storedEmail && password === storedPassword) {
+        localStorage.setItem('cc_access', 'true');
+        closeLoginModal();
+        showDashboard();
+    } else {
+        alert('Invalid email or password. If you just purchased, check the email you used at checkout.');
+    }
+}
+
+function logout() {
+    localStorage.removeItem('cc_access');
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('landing-page').style.display = 'block';
 }
 
 function showLanding() {
@@ -680,42 +712,16 @@ function showLanding() {
     document.getElementById('dashboard').style.display = 'none';
 }
 
-function logoutOutseta() {
-    Outseta.setAccessToken(null);
-    showLanding();
-    location.reload();
-}
-
-// Navigation functions - kept for compatibility
-function showLogin() {
-    openLogin();
-}
-
-function openLogin() {
-    var callback = encodeURIComponent(window.location.origin);
-    window.location.href = 'https://project-hope.outseta.com/auth?widgetMode=login&planUid=B9I4XI98&skipPlanOptions=true&authenticationCallbackUrl=' + callback + '#o-anonymous';
-}
-
-function openSignup() {
-    var callback = encodeURIComponent(window.location.origin);
-    window.location.href = 'https://project-hope.outseta.com/auth?widgetMode=register&planUid=B9I4XI98&skipPlanOptions=true&authenticationCallbackUrl=' + callback + '#o-anonymous';
-}
-
-function openProfile() {
-    window.location.href = 'https://project-hope.outseta.com/profile#o-authenticated';
-}
-
-function closeLogin() {}
-
-function handleLogin(event) {
-    event.preventDefault();
-}
-
 function showDashboard() {
     document.getElementById('landing-page').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
     displayLetters('bureau');
     updateTrackerStats();
+}
+
+// Checkout function (kept for any remaining references)
+function checkout() {
+    goToCheckout();
 }
 
 function showSection(sectionId) {
@@ -1057,12 +1063,6 @@ function updateDisputeStatus(id, status) {
     }
 }
 
-// Checkout - Outseta integration
-function checkout() {
-    if (typeof Outseta !== 'undefined') {
-        Outseta.auth.open({widgetMode: 'register'});
-    }
-}
 
 // Dispute Finder Functions
 function showFinderStep(step) {
