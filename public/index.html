@@ -329,9 +329,13 @@
                 <div class="form-group">
                     <label for="login-password">Password</label>
                     <input type="password" id="login-password" required placeholder="Enter your password">
+                    <label style="font-weight:400;font-size:14px;margin-top:6px;cursor:pointer;color:#64748B;">
+                        <input type="checkbox" onchange="document.getElementById('login-password').type = this.checked ? 'text' : 'password'"> Show password
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width:100%">Login</button>
             </form>
+            <p class="modal-footer-text">Forgot password? <a href="mailto:support@smdigitalsolutions.com">Contact support</a></p>
             <p class="modal-footer-text">Don't have an account? <a href="#" onclick="goToCheckout()">Purchase access</a></p>
         </div>
     </div>
