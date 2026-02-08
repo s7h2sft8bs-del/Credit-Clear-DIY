@@ -8,24 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
-    <!-- Outseta Auth & Payment -->
-    <script>
-        var o_options = {
-            domain: 'project-hope.outseta.com',
-            load: 'auth,profile',
-            auth: {
-                widgetMode: 'popup',
-                planUid: 'B9I4XI98',
-                skipPlanOptions: true,
-                authenticationCallbackUrl: window.location.origin,
-                rememberLastEmail: true
-            },
-            profile: {
-                widgetMode: 'popup'
-            }
-        };
-    </script>
-    <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
 </head>
 <body>
     <!-- Landing Page -->
@@ -39,7 +21,7 @@
                 <a href="#how-it-works">How It Works</a>
                 <a href="#letters">Letters Included</a>
                 <a href="#pricing">Pricing</a>
-                <button class="btn btn-outline" onclick="openLogin()">Login</button>
+                <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
             </div>
         </nav>
 
@@ -66,7 +48,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary btn-large" onclick="openSignup()">
+                <button class="btn btn-primary btn-large" onclick="goToCheckout()">
                     Get Instant Access - $29.99
                 </button>
                 <p class="guarantee"><span>30-day money back guarantee</span> <span>Instant access after purchase</span></p>
@@ -273,7 +255,7 @@
                     <div class="pricing-feature">✓ FCRA & FDCPA Legal References</div>
                     <div class="pricing-feature">✓ Lifetime Updates</div>
                 </div>
-                <button class="btn btn-primary btn-large" onclick="openSignup()">
+                <button class="btn btn-primary btn-large" onclick="goToCheckout()">
                     Get Instant Access Now
                 </button>
                 <p class="pricing-guarantee">30-Day Money Back Guarantee</p>
@@ -313,7 +295,7 @@
         <section class="cta-section">
             <h2>Ready to Take Control of Your Credit?</h2>
             <p>Join thousands who've saved money by doing their own credit repair</p>
-            <button class="btn btn-primary btn-large" onclick="openSignup()">
+            <button class="btn btn-primary btn-large" onclick="goToCheckout()">
                 Get Started for $29.99
             </button>
         </section>
@@ -334,6 +316,26 @@
         </footer>
     </div>
 
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>Welcome Back</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%">Login</button>
+            </form>
+            <p class="modal-footer-text">Don't have an account? <a href="#" onclick="goToCheckout()">Purchase access</a></p>
+        </div>
+    </div>
+
     <!-- Dashboard (shown after login) -->
     <div id="dashboard" style="display: none;">
         <nav class="navbar dashboard-nav">
@@ -346,8 +348,7 @@
                 <a href="#" class="nav-active" onclick="showSection('letters-dashboard')">Letters</a>
                 <a href="#" onclick="showSection('tracker')">Tracker</a>
                 <a href="#" onclick="showSection('guide')">Guide</a>
-                <button class="btn btn-outline" onclick="openProfile()">Account</button>
-                <button class="btn btn-outline" onclick="logoutOutseta()">Logout</button>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
             </div>
         </nav>
 
