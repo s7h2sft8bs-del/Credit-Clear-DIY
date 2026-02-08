@@ -655,7 +655,9 @@ function showSetupAccount() {
         '<div class="form-group"><label for="setup-email">Email</label>' +
         '<input type="email" id="setup-email" required placeholder="Your email"></div>' +
         '<div class="form-group"><label for="setup-password">Create Password</label>' +
-        '<input type="password" id="setup-password" required placeholder="Choose a password" minlength="6"></div>' +
+        '<input type="password" id="setup-password" required placeholder="Choose a password" minlength="6">' +
+        '<label style="font-weight:400;font-size:14px;margin-top:6px;cursor:pointer;color:#64748B;">' +
+        '<input type="checkbox" onchange="document.getElementById(\'setup-password\').type = this.checked ? \'text\' : \'password\'"> Show password</label></div>' +
         '<button type="submit" class="btn btn-primary" style="width:100%">Access My Dashboard</button>' +
         '</form></div>';
     document.body.appendChild(modal);
